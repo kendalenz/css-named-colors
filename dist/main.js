@@ -4391,47 +4391,45 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 var Home = function Home() {
+  var gistJsDelivrUrl = "https://gist.githubusercontent.com/kendalenz/32ca10c126219f8c706d3298d1c9cf1d/raw/6dd746ac16877b3c6b3c04d55536d0eba032a54f/cssNamedColors.csv";
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var fetchData = /*#__PURE__*/function () {
       var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-        var gistJsDelivrUrl, response, data;
+        var response, data;
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
-              gistJsDelivrUrl = "https://gist.githubusercontent.com/kendalenz/32ca10c126219f8c706d3298d1c9cf1d/raw/6dd746ac16877b3c6b3c04d55536d0eba032a54f/cssNamedColors.csv";
-              _context.prev = 1;
-              _context.next = 4;
+              _context.prev = 0;
+              _context.next = 3;
               return fetch(gistJsDelivrUrl);
-            case 4:
+            case 3:
               response = _context.sent;
               if (response.ok) {
-                _context.next = 7;
+                _context.next = 6;
                 break;
               }
               throw new Error("Network response was not ok");
-            case 7:
-              _context.next = 9;
+            case 6:
+              _context.next = 8;
               return response.text();
-            case 9:
+            case 8:
               data = _context.sent;
-              console.log(data); // This will log the fetched data to the console
-              _context.next = 16;
-              break;
+              return _context.abrupt("return", data);
             case 13:
               _context.prev = 13;
-              _context.t0 = _context["catch"](1);
+              _context.t0 = _context["catch"](0);
               console.error(_context.t0);
             case 16:
             case "end":
               return _context.stop();
           }
-        }, _callee, null, [[1, 13]]);
+        }, _callee, null, [[0, 13]]);
       }));
       return function fetchData() {
         return _ref.apply(this, arguments);
       };
     }();
-    fetchData();
+    fetchData(gistJsDelivrUrl);
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null);
 };
