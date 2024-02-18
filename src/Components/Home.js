@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import * as d3 from "d3";
 
 const Home = () => {
   const gistJsDelivrUrl =
@@ -12,14 +13,19 @@ const Home = () => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
-        const data = await response.text();
+        const text = await response.text();
+        const data = d3.csvParse(text)
+        console.log(Math.round(text.length / 1024) + 'kb')
+        console.log(data.length + 'rows')
+        console.log(data.columns.length + 'columns')
+
+        // console.log(data); // This will log the fetched data to the console
+
         return data;
-        console.log(data); // This will log the fetched data to the console
       } catch (error) {
         console.error(error);
       }
     };
-
     fetchData(gistJsDelivrUrl);
   }, []);
 
