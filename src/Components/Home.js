@@ -16,7 +16,6 @@ const Home = () => {
         `${data.length} rows`,
         `${data.columns.length} columns`,
       ];
-
       setMessages(messages);
     }).catch(error => {
       console.error(error);
